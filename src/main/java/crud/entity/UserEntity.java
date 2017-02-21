@@ -1,5 +1,7 @@
 package crud.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -8,10 +10,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sys_user")
-public class CRUDEntity {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
+    @JsonIgnore
     @Column(name = "id")
     private long id;
 
@@ -21,7 +24,10 @@ public class CRUDEntity {
     @Column(name = "email")
     private String email;
 
-    public CRUDEntity(long id, String name, String email) {
+    public UserEntity() {
+    }
+
+    public UserEntity(long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -56,7 +62,7 @@ public class CRUDEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CRUDEntity that = (CRUDEntity) o;
+        UserEntity that = (UserEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
