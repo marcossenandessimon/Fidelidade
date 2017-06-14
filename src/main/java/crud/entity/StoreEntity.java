@@ -20,12 +20,12 @@ public class StoreEntity extends UserEntity {
     private String address;
 
     @Column(name = "score_type")
-    private int scoreType;
+    private Integer scoreType;
 
     public StoreEntity() {
     }
 
-    public StoreEntity(String tradingName, String cnpj, String address, int scoreType) {
+    public StoreEntity(String tradingName, String cnpj, String address, Integer scoreType) {
         this.tradingName = tradingName;
         this.cnpj = cnpj;
         this.address = address;
@@ -56,11 +56,11 @@ public class StoreEntity extends UserEntity {
         this.address = address;
     }
 
-    public int getScoreType() {
+    public Integer getScoreType() {
         return scoreType;
     }
 
-    public void setScoreType(int scoreType) {
+    public void setScoreType(Integer scoreType) {
         this.scoreType = scoreType;
     }
 

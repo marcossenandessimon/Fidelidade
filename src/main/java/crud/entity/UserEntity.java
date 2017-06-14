@@ -17,7 +17,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.TABLE)
     @JsonIgnore
     @Column(name = "id")
-    private long id;
+    private Long id;
 
 
     /**
@@ -33,19 +33,15 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(long id, String name, String email) {
+    public UserEntity(Long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
