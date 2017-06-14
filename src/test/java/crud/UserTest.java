@@ -36,25 +36,25 @@ public class UserTest {
     @Before
     public void setup(){
         repo.deleteAll();
-        repo.save(new UserEntity(1,"Marcos", "marcos@marcos.com"));
-        repo.save(new UserEntity(2,"Ione", "ione@ione.com"));
+        repo.save(new UserEntity(1,"Marcos", "marcos@marcos.com", "123.456.789-00"));
+        repo.save(new UserEntity(2,"Ione", "ione@ione.com", "009.876.543-21"));
     }
 
 
     @Test
     public void testGetUsers() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/users").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/user").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
 
 
     }
 
-    @Test
-    public void testGetHelloWorld() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello world!")));
-    }
+//    @Test
+//    public void testGetHelloWorld() throws Exception {
+//        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(content().string(equalTo("hello world!")));
+//    }
 
 }

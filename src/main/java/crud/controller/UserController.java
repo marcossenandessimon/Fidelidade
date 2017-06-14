@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
+@RequestMapping(path = "/user")
 public class UserController {
 
     private final UserService userService;
@@ -19,17 +20,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String firstGet(){
-        return "hello world!";
-    }
-
-    @RequestMapping(path = "/users", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public UserEntity addingAUser(@RequestBody UserEntity userEntity){
         return userService.createUser(userEntity);
     }
 
-    @RequestMapping(path = "/users", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Iterable<UserEntity> getAllUsers(){
         return userService.getAllUsers();
     }

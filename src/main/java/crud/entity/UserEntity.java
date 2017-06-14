@@ -24,13 +24,19 @@ public class UserEntity {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "cpf")
+    private String cpf;
+
+
     public UserEntity() {
     }
 
-    public UserEntity(long id, String name, String email) {
+    public UserEntity(long id, String name, String email, String cpf) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.cpf = cpf;
+
     }
 
     public long getId() {
@@ -57,6 +63,14 @@ public class UserEntity {
         this.email = email;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,7 +80,8 @@ public class UserEntity {
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return email != null ? email.equals(that.email) : that.email == null;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        return cpf != null ? cpf.equals(that.cpf) : that.cpf == null;
     }
 
     @Override
@@ -74,6 +89,7 @@ public class UserEntity {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (cpf != null ? cpf.hashCode() : 0);
         return result;
     }
 }
