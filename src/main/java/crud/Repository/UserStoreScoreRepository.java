@@ -8,6 +8,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface UserStoreScoreRepository extends PagingAndSortingRepository<UserStoreScoreEntity, Long> {
 
-    public Integer findByStoreIdAndUserId
+    //public Integer findByStoreIdAndUserId
 
 }

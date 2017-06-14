@@ -36,8 +36,8 @@ public class UserTest {
     @Before
     public void setup(){
         repo.deleteAll();
-        repo.save(new UserEntity(1,"Marcos", "marcos@marcos.com", "123.456.789-00"));
-        repo.save(new UserEntity(2,"Ione", "ione@ione.com", "009.876.543-21"));
+        repo.save(new UserEntity(1,"Marcos", "marcos@marcos.com"/*, "123.456.789-00"*/));
+        repo.save(new UserEntity(2,"Ione", "ione@ione.com"/*, "009.876.543-21"*/));
     }
 
 

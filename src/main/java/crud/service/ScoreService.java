@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class ScoreService {
 
     public String addCredit(StoreEntity storeEntity, UserEntity userEntity){
-
+        return null;
     }
 
 }
