@@ -21,8 +21,8 @@ public class ConsumerService {
     }
 
     @Transactional
-    public void save (ConsumerEntity consumerEntity){
-        consumerRepository.save(consumerEntity);
+    public ConsumerEntity save (ConsumerEntity consumerEntity){
+        return consumerRepository.save(consumerEntity);
     }
 
 }

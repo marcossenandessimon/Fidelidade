@@ -33,4 +33,8 @@ public class StoreService {
 
     }
 
+    public StoreEntity findOne(Long storeId){
+        return storeRepository.findOne(storeId);
+    }
+
 }

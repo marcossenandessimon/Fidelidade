@@ -23,8 +23,8 @@ public class ConsumerController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void add(@RequestBody ConsumerEntity consumerEntity){
-        consumerService.save(consumerEntity);
+    public ConsumerEntity add(@RequestBody ConsumerEntity consumerEntity){
+        return consumerService.save(consumerEntity);
     }
 
 }
