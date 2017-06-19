@@ -1,9 +1,11 @@
 package crud.controller;
 
+import crud.entity.ConsumerEntity;
 import crud.entity.ConsumerStoreScoreEntity;
 import crud.entity.ScoreEntity;
 import crud.entity.StoreEntity;
 import crud.request.ScoreRequest;
+import crud.service.ConsumerService;
 import crud.service.ConsumerStoreScoreService;
 import crud.service.ScoreService;
 import crud.service.StoreService;
@@ -22,11 +24,13 @@ public class StoreController {
 
     private final StoreService storeService;
     private final ScoreService scoreService;
+    private final ConsumerService consumerService;
 
     @Autowired
-    public StoreController(StoreService storeService, ScoreService scoreService){
+    public StoreController(StoreService storeService, ScoreService scoreService, ConsumerService consumerService){
         this.storeService = storeService;
         this.scoreService = scoreService;
+        this.consumerService = consumerService;
 
     }
 
@@ -41,10 +45,19 @@ public class StoreController {
     }
 
     @RequestMapping(path = "/createScore")
-    public ScoreEntity addScore(@RequestBody ScoreRequest scoreRequest){
+    public ConsumerEntity addScore(@RequestBody ScoreRequest scoreRequest){
 
         StoreEntity storeEntity = storeService.findOne(scoreRequest.getStoreId());
-        return scoreService.createScore(scoreRequest, storeEntity);
+        ConsumerEntity consumerEntity = consumerService.findOne(scoreRequest.getConsumerId());
+        ScoreEntity scoreEntity = consumerService.findScore(storeEntity, scoreRequest.getConsumerId());
+
+        if( scoreEntity == null){
+             scoreEntity = scoreService.createScore(scoreRequest, storeEntity);
+        }else{
+            scoreEntity.setScore(scoreRequest.getScore());
+        }
+
+        return consumerService.addScoreToUser(consumerEntity, scoreEntity);
 
     }
 
