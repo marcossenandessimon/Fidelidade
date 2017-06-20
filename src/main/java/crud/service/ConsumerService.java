@@ -4,6 +4,8 @@ import crud.Repository.ConsumerRepository;
 import crud.entity.ConsumerEntity;
 import crud.entity.ScoreEntity;
 import crud.entity.StoreEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,7 @@ import java.util.Set;
 public class ConsumerService {
 
     private final ConsumerRepository consumerRepository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerService.class);
 
     @Autowired
     public ConsumerService(ConsumerRepository consumerRepository){
@@ -25,6 +28,7 @@ public class ConsumerService {
 
     @Transactional
     public ConsumerEntity save (ConsumerEntity consumerEntity){
+        LOGGER.debug("created the consumer " + consumerEntity.getName());
         return consumerRepository.save(consumerEntity);
     }
 
@@ -36,6 +40,7 @@ public class ConsumerService {
         Set<ScoreEntity> scoreSet = consumerEntity.getScore();
         scoreSet.add(scoreEntity);
         consumerEntity.setScore(scoreSet);
+        LOGGER.debug("added " + scoreEntity.getScore() + " to the consumer " + consumerEntity.getName());
         return consumerRepository.save(consumerEntity);
     }
 
