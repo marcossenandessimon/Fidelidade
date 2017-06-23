@@ -4,3 +4,4 @@
 .idea/
 *.iml
 /target/
+/fidelidade/node_modules
