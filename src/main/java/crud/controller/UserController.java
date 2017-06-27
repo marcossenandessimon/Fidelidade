@@ -25,6 +25,7 @@ public class UserController {
         return userService.createUser(userEntity);
     }
 
+    @CrossOrigin(origins = {"http://localhost:8100", "file://"})
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<UserEntity> getAllUsers(){
         return userService.getAllUsers();
