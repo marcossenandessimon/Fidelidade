@@ -28,7 +28,7 @@ public class ConsumerService {
 
     @Transactional
     public ConsumerEntity save (ConsumerEntity consumerEntity){
-        LOGGER.debug("created the consumer " + consumerEntity.getName());
+        LOGGER.info("created the consumer " + consumerEntity.getName());
         return consumerRepository.save(consumerEntity);
     }
 
@@ -40,7 +40,7 @@ public class ConsumerService {
         Set<ScoreEntity> scoreSet = consumerEntity.getScore();
         scoreSet.add(scoreEntity);
         consumerEntity.setScore(scoreSet);
-        LOGGER.debug("added " + scoreEntity.getScore() + " to the consumer " + consumerEntity.getName());
+        LOGGER.info("added " + scoreEntity.getScore() + " to the consumer " + consumerEntity.getName());
         return consumerRepository.save(consumerEntity);
     }
 

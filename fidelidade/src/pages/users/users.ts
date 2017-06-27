@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../providers/user-service';
+import { UserPage } from '../user/user';
 
 @IonicPage()
 @Component({
@@ -17,6 +18,11 @@ export class UsersPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsersPage');
     this.userService.getUsers().subscribe(users => {this.users = users})
+  }
+
+  test(x){
+    console.log(x);
+    this.navCtrl.push(UserPage, {user: x})
   }
 
 }
