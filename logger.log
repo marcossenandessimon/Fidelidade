@@ -48,3 +48,28 @@
 2017-06-27 15:52:52.277  INFO 1444 --- [http-nio-8080-exec-10] c.s.UserService                          : returning all users
 2017-06-27 15:52:59.092  INFO 1444 --- [http-nio-8080-exec-1] c.s.UserService                          : returning all users
 2017-06-27 15:53:48.166  INFO 1444 --- [http-nio-8080-exec-2] c.s.UserService                          : returning all users
+2017-06-28 10:55:53.911  INFO 9632 --- [main] c.Application                            : Starting Application on CP3999 with PID 9632 (C:\Users\user\workspace\Fidelidade\target\classes started by user in C:\Users\user\workspace\Fidelidade)
+2017-06-28 10:55:53.928  INFO 9632 --- [main] c.Application                            : No active profile set, falling back to default profiles: default
+2017-06-28 10:55:54.365  INFO 9632 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c309d4d: startup date [Wed Jun 28 10:55:54 BRT 2017]; root of context hierarchy
+2017-06-28 10:55:58.878  INFO 9632 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-06-28 10:55:59.211  INFO 9632 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-06-28 10:55:59.376  INFO 9632 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$107a842c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-06-28 10:56:00.999  INFO 9632 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-06-28 10:56:01.052  INFO 9632 --- [main] o.a.c.c.StandardService                  : Starting service Tomcat
+2017-06-28 10:56:01.059  INFO 9632 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-06-28 10:56:01.601  INFO 9632 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2017-06-28 10:56:02.145  INFO 9632 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2017-06-28 10:56:02.156  INFO 9632 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-06-28 10:56:02.156  INFO 9632 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-06-28 10:56:02.157  INFO 9632 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-06-28 10:56:02.157  INFO 9632 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2017-06-28 10:56:04.843  INFO 9632 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-06-28 10:56:09.819  INFO 9632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-06-28 10:56:15.556  INFO 9632 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-06-28 10:56:16.003  INFO 9632 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-06-28 10:56:16.018  INFO 9632 --- [main] c.Application                            : Started Application in 23.961 seconds (JVM running for 26.778)
+2017-06-28 10:57:49.106  INFO 9632 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-06-28 10:57:49.643  INFO 9632 --- [http-nio-8080-exec-1] c.s.ConsumerService                      : created the consumer marcos
+2017-06-28 10:57:52.380  INFO 9632 --- [http-nio-8080-exec-2] c.s.ConsumerService                      : created the consumer gisele
+2017-06-28 11:00:54.166  INFO 9632 --- [http-nio-8080-exec-7] c.s.UserService                          : returning all users
+2017-06-28 11:40:21.001  INFO 9632 --- [http-nio-8080-exec-1] c.s.UserService                          : returning all users
