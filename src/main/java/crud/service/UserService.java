@@ -2,6 +2,8 @@ package crud.service;
 
 import crud.Repository.UserRepository;
 import crud.entity.UserEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     public UserService(UserRepository userRepository){
@@ -24,11 +27,13 @@ public class UserService {
 
     @Transactional
     public UserEntity createUser(UserEntity userEntity){
-        return userRepository.save(userEntity);
+        UserEntity returnUser =  userRepository.save(userEntity);
+        LOGGER.info("created user: " + returnUser.getName());
+        return returnUser;
     }
 
     public Iterable<UserEntity> getAllUsers() {
-        List<UserEntity> users = new ArrayList<>();
+        LOGGER.info("returning all users");
         return userRepository.findAll();
     }
 }

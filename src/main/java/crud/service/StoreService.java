@@ -2,6 +2,8 @@ package crud.service;
 
 import crud.Repository.StoreRepository;
 import crud.entity.StoreEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class StoreService {
 
     private final StoreRepository storeRepository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(StoreService.class);
 
     @Autowired
     public StoreService(StoreRepository storeRepository){
@@ -24,11 +27,12 @@ public class StoreService {
 
     @Transactional
     public StoreEntity createStore(StoreEntity storeEntity){
+        LOGGER.info("created store: " + storeEntity.getName());
         return storeRepository.save(storeEntity);
     }
 
     public Iterable<StoreEntity> getAllStores(){
-        //List<StoreEntity> storeEntities = new ArrayList<>();
+        LOGGER.info("returning all stores");
         return storeRepository.findAll();
 
     }
