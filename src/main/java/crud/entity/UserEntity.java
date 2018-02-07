@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "sys_user")
+@Table(name = "SYS_USER")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class UserEntity {
 

@@ -7,22 +7,18 @@ import java.util.Set;
  * Created by marqu on 13/06/2017.
  */
 @Entity
-@Table(name = "sys_consumer")
+@Table(name = "SYS_CONSUMER")
 public class ConsumerEntity extends UserEntity {
 
+    @Column(name = "CPF")
     private String cpf;
-
-    @OneToMany
-    @JoinColumn(name = "consumer_id", referencedColumnName = "id")
-    private Set<ScoreEntity> score;
 
     public ConsumerEntity() {
     }
 
-    public ConsumerEntity(Long id, String name, String email, String cpf, Set<ScoreEntity> score) {
+    public ConsumerEntity(Long id, String name, String email, String cpf) {
         super(id, name, email);
         this.cpf = cpf;
-        this.score = score;
     }
 
     public String getCpf() {
@@ -33,32 +29,21 @@ public class ConsumerEntity extends UserEntity {
         this.cpf = cpf;
     }
 
-    public Set<ScoreEntity> getScore() {
-        return score;
-    }
-
-    public void setScore(Set<ScoreEntity> score) {
-        this.score = score;
-    }
-
     @Override
     public boolean equals(Object o) {
-
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
         ConsumerEntity that = (ConsumerEntity) o;
 
-        if (cpf != null ? !cpf.equals(that.cpf) : that.cpf != null) return false;
-        return score != null ? score.equals(that.score) : that.score == null;
+        return cpf != null ? cpf.equals(that.cpf) : that.cpf == null;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + (cpf != null ? cpf.hashCode() : 0);
-        result = 31 * result + (score != null ? score.hashCode() : 0);
         return result;
     }
 }

@@ -43,7 +43,7 @@ public class StoreController {
     public Iterable<StoreEntity> getAllStores(){
         return storeService.getAllStores();
     }
-
+/*
     @RequestMapping(path = "/createScore")
     public ConsumerEntity addScore(@RequestBody ScoreRequest scoreRequest){
 
@@ -60,5 +60,5 @@ public class StoreController {
         return consumerService.addScoreToUser(consumerEntity, scoreEntity);
 
     }
-
+*/
 }

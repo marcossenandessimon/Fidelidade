@@ -36,7 +36,15 @@ public class ConsumerService {
         return consumerRepository.findOne(consumerId);
     }
 
-    public ConsumerEntity addScoreToUser(ConsumerEntity consumerEntity, ScoreEntity scoreEntity){
+    public String createQR(Long userId) {
+        ConsumerEntity consumerEntity = consumerRepository.findOne(userId);
+        StringBuilder response = new StringBuilder();
+        response.append(consumerEntity.getId());
+        response.append(consumerEntity.getCpf());
+        return response.toString();
+    }
+
+   /* public ConsumerEntity addScoreToUser(ConsumerEntity consumerEntity, ScoreEntity scoreEntity){
         Set<ScoreEntity> scoreSet = consumerEntity.getScore();
         scoreSet.add(scoreEntity);
         consumerEntity.setScore(scoreSet);
@@ -54,5 +62,5 @@ public class ConsumerService {
         }
         return null;
     }
-
+*/
 }
